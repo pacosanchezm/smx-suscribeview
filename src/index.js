@@ -10,7 +10,7 @@ const rootElement = document.getElementById("root")
 
 ReactDOM.render(
   <React.StrictMode>
-    <App id={id}/>
+    <App id={window.id}/>
     </React.StrictMode>,
   rootElement
 )
