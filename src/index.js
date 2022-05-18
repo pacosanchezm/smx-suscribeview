@@ -6,7 +6,7 @@ import App from "./appi.jsx"
 const rootElement = document.getElementById("root")
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App id={9998}/>
     </React.StrictMode>,
   rootElement
 )
