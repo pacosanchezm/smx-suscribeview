@@ -358,9 +358,9 @@ let useAcciones = function(StateContext) {
 
     Loader : async function (props) {
 
+      console.log(props)
 
-
-      let useRegistro = await useData.Clientes().getIdFull({Id:3544}) //todo hilar con request
+      let useRegistro = await useData.Clientes().getIdFull({Id:props.id}) //todo hilar con request
       console.log(useRegistro)
       setDetalle(useRegistro)
 
