@@ -180,62 +180,12 @@ const ModuloSimple  = () => {
     >
 
 
-    <Container fluid>
-
-
-    <Image sx={{ height: 222,  }} src="https://smxblogs.com/empresando/wp-content/empresando/red/unete1.jpg"/>
-
-
-      <Row>
-        <Text sx={Estilo.msecc2}>{"Regístrate y sé parte de la red Empresando."}</Text>
-      </Row>
-      <Row>
-      <Col xs={2}> </Col>
-
-        <Col xs={8}> <Text sx={Estilo.p2s} style={{color: "gray"}}>{"Recibe por whatsapp historias de emprendimiento e información relevante del mundo emprendedor."}</Text></Col>
-
-                <Col xs={2}><Image src="https://smxblogs.com/empresando/wp-content/empresando/red/whatslogo1.png"/> </Col>
-                <Col xs={2}> </Col>
-
-      </Row>
-    
-      <Box css={{ height: 21 }} />
-
-
-
-      <Container fluid>
-
-
-        <Row>
-          <Col xs={4}><Image src="https://smxblogs.com/empresando/wp-content/empresando/red/his1.jpg"/> </Col>
-          <Col xs={4}><Image src="https://smxblogs.com/empresando/wp-content/empresando/red/info1.jpg"/> </Col>
-          <Col xs={4}><Image src="https://smxblogs.com/empresando/wp-content/empresando/red/his2.jpg"/> </Col>
-
-        
-
-        </Row>
-
-      </Container>
-
-      <Box css={{ height: 21 }} />
-
-
-
-      <Row>
-        <Text sx={Estilo.msecc2}>{"¡Sigamos haciendo juntos un México de emprendedores!"}</Text>
-      </Row>
-    
-    
-    </Container>
-
-
-
 
 
       <Box sx={{ height: 13,  }} />
 
       <Row>
-        <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Tus datos de contacto"}</Text>
+        <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Datos de contacto"}</Text>
       </Row>
 
 
@@ -249,7 +199,7 @@ const ModuloSimple  = () => {
 
         <Row style={{marginBottom: "10px"}}>
           <Col xs={3}> <Text sx={Estilo.label1} >Apellidos</Text> </Col>
-          <Col xs={9}> <Input sx={Estilo.input1} {...useChangeArray(Detalle, "Apellido", setDetalle)}/> </Col>
+          <Col xs={9}> <Input sx={Estilo.input1} {...useChangeArray(Detalle, "ApellidoPat", setDetalle)}/> </Col>
         </Row>
 
         <Row style={{marginBottom: "10px"}}>
@@ -271,20 +221,12 @@ const ModuloSimple  = () => {
               name="Categoria"
               isSearchable={false}
               styles={DropboxFiltro1}
-              value={{value: Detalle.Estado, label: Detalle.Estado}}
+              value={{value: Detalle.ClientesProfsEstado, label: Detalle.ClientesProfsEstado}}
               options={props.useContext.Estados[0]}
-              onChange={async e => { setDetalle({ ...Detalle, "Estado": e.value }) }} 
+              onChange={async e => { setDetalle({ ...Detalle, "ClientesProfsEstado": e.value }) }} 
             />
           </Col>
         </Row>
-
-
-
-
-
-
-
-
 
 
       </Container>
@@ -297,7 +239,7 @@ const ModuloSimple  = () => {
 
       <Row>
         <Col xs={9} style={{textAlign: "left"}}>
-          <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Etapa de tu emprendimiento"}</Text> <Text sx={Estilo.d2s} >(opcional)</Text>
+          <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Etapa del emprendimiento"}</Text> 
         </Col>
       </Row>
 
@@ -309,10 +251,10 @@ const ModuloSimple  = () => {
         <Row style={{marginBottom: "10px"}}>
           <Button
             sx={{width: "100%", bg: "transparent"}}
-            {...useChangeBooleanArray(Detalle, "Referencia1", setDetalle)}
+            {...useChangeBooleanArray(Detalle, "ClientesProfsReferencia1", setDetalle)}
           >
             <Row>
-                <Col xs={2} style={{paddingLeft: "50px"}}> <Checkbox checked={Detalle.Referencia1}/> </Col>
+                <Col xs={2} style={{paddingLeft: "50px"}}> <Checkbox checked={Detalle.ClientesProfsReferencia1}/> </Col>
                <Col xs={8} style={{textAlign: "left"}}> <Text sx={Estilo.d2s} >Estoy desarrollando la idea de negocio</Text> </Col>
             </Row>
           </Button>
@@ -323,10 +265,10 @@ const ModuloSimple  = () => {
         <Row style={{marginBottom: "10px"}}>
           <Button
             sx={{width: "100%", bg: "transparent"}}
-            {...useChangeBooleanArray(Detalle, "Referencia3", setDetalle)}
+            {...useChangeBooleanArray(Detalle, "ClientesProfsReferencia3", setDetalle)}
           >
             <Row>
-            <Col xs={2} style={{paddingLeft: "50px"}}> <Checkbox checked={Detalle.Referencia3}/> </Col>
+            <Col xs={2} style={{paddingLeft: "50px"}}> <Checkbox checked={Detalle.ClientesProfsReferencia3}/> </Col>
               <Col xs={8} style={{textAlign: "left"}} > <Text sx={Estilo.d2s}>En operación (ya vendo productos y/o servicios)</Text> </Col>
             </Row>
           </Button>
@@ -335,10 +277,10 @@ const ModuloSimple  = () => {
         <Row style={{marginBottom: "10px"}}>
           <Button
             sx={{width: "100%", bg: "transparent"}}
-            {...useChangeBooleanArray(Detalle, "Referencia4", setDetalle)}
+            {...useChangeBooleanArray(Detalle, "ClientesProfsReferencia4", setDetalle)}
           >
             <Row>
-            <Col xs={2} style={{paddingLeft: "50px"}}> <Checkbox checked={Detalle.Referencia4}/> </Col>
+            <Col xs={2} style={{paddingLeft: "50px"}}> <Checkbox checked={Detalle.ClientesProfsReferencia4}/> </Col>
               <Col xs={8} style={{textAlign: "left"}}> <Text sx={Estilo.d2s}>No tengo una idea concreta</Text> </Col>
             </Row>
           </Button>
@@ -347,7 +289,7 @@ const ModuloSimple  = () => {
         <Row style={{marginBottom: "10px"}}>
           <Row>
             <Col xs={3} style={{textAlign: "left", paddingLeft: "50px"}}> <Text sx={Estilo.d2s}>Otro</Text> </Col>
-            <Col xs={8} style={{textAlign: "left"}}> <Input sx={Estilo.input1} {...useChangeArray(Detalle, "Referencia5", setDetalle)}/> </Col>
+            <Col xs={8} style={{textAlign: "left"}}> <Input sx={Estilo.input1} {...useChangeArray(Detalle, "ClientesProfsReferencia5", setDetalle)}/> </Col>
           </Row>
         </Row>
 
@@ -360,7 +302,7 @@ const ModuloSimple  = () => {
 
       <Row>
         <Col xs={9} style={{textAlign: "left"}}>
-          <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Datos del emprendimiento"}</Text> <Text sx={Estilo.d2s} >(opcional)</Text>
+          <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Datos del emprendimiento"}</Text> 
         </Col>
 
       </Row>
@@ -373,12 +315,12 @@ const ModuloSimple  = () => {
 
         <Row style={{marginBottom: "10px"}}>
           <Col xs={3}> <Text sx={Estilo.label1} >Nombre</Text> </Col>
-          <Col xs={9}> <Input sx={Estilo.input1} {...useChangeArray(Detalle, "Titulo", setDetalle)}/> </Col>
+          <Col xs={9}> <Input sx={Estilo.input1} {...useChangeArray(Detalle, "ClientesProfsTitulo", setDetalle)}/> </Col>
         </Row>
 
         <Row style={{marginBottom: "10px"}}>
           <Col xs={3}> <Text sx={Estilo.label1} >Sitio Web / Redes</Text> </Col>
-          <Col xs={9}> <Input sx={Estilo.input1} {...useChangeArray(Detalle, "Web", setDetalle)}/> </Col>
+          <Col xs={9}> <Input sx={Estilo.input1} {...useChangeArray(Detalle, "ClientesProfsWeb", setDetalle)}/> </Col>
         </Row>
 
 
@@ -389,9 +331,9 @@ const ModuloSimple  = () => {
               name="Categoria"
               isSearchable={false}
               styles={DropboxFiltro1}
-              value={{value: Detalle.Empleados, label: Detalle.Empleados}}
+              value={{value: Detalle.ClientesProfsEmpleados, label: Detalle.ClientesProfsEmpleados}}
               options={props.useContext.Empleados[0]}
-              onChange={async e => { setDetalle({ ...Detalle, "Empleados": e.value }) }} 
+              onChange={async e => { setDetalle({ ...Detalle, "ClientesProfsEmpleados": e.value }) }} 
             />
           </Col>
         </Row>
@@ -408,29 +350,8 @@ const ModuloSimple  = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <Col xs={9} style={{textAlign: "left"}}>
-        <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Cuéntanos sobre ti"}</Text> <Text sx={Estilo.d2s} >(opcional)</Text>
+        <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Comentarios"}</Text> 
       </Col>
 
 
@@ -445,7 +366,7 @@ const ModuloSimple  = () => {
           <Col xs={12}> 
             <Textarea
               // sx={Estilo.input1}
-              {...useChangeArray(Detalle, "Descripcion", setDetalle)}
+              {...useChangeArray(Detalle, "ClientesProfsDescripcion", setDetalle)}
               rows={5}
             />          
           </Col>
@@ -453,68 +374,8 @@ const ModuloSimple  = () => {
 
       </Container>
 
-      <Box css={{ height: 21 }} />
 
-
-      <Container fluid>
-        <Row style={{marginBottom: "10px"}}>
-        
-          <Col xs={3} > 
-            <Button
-                sx={{width: "100%", bg: "transparent"}}
-                {...useChangeBoolean(Aceptado, setAceptado)}
-            >
-             <Checkbox checked={Aceptado} />
-
-
-             
-            </Button>
-          </Col>
-
-          <Col xs={8} style={{textAlign: "left"}}> 
-            <Text pt={"3px"} sx={Estilo.d2s}>Acepto el </Text>
-            <Link sx={Estilo.h3}  href='/avisoprivacidad' target='_blank'>
-              {" Aviso de Privacidad"}
-            </Link>
-          </Col>
-
-        </Row>
-
-      </Container>
-
-
-      <Box css={{ height: 8 }} />
-
-
-      <Container fluid 
-      >
-        <Row style={{marginBottom: "10px"}}>
-        <Col xs={2}/> 
-
-          <Col xs={8}> 
-            <Button sx={{ width: "100%", height: "34px" }}
-              width={1}
-              bg={ColorBoton()}
-              disabled={EnableBoton()}
-              onClick={async () => {
-                setLoadingSecc(true)
-                  await props.useAcciones.InfoAdd()
-                setLoadingSecc(false)
-              }}
-            >
-              <Text sx={Estilo.mbtn1}>
-                Registrarme
-                {LoadingSecc ? <Spinner size={17} ml={0} /> : <div/>}
-              </Text>
-
-            </Button>
-          </Col>
-
-        </Row>
-
-      </Container>
-
-      <Box css={{ height: 34 }} />
+      <Box sx={{ height: 21,  }} />
 
 
 </Container>

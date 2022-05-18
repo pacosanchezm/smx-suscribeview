@@ -55,19 +55,21 @@ let server = "https://www.empresando.com"
 let MiDetalle = {
   Empresa: 4,
   Id: ["0"],
-  Codigo: [""],
+  //Codigo: [""],
   Fecha: [""],
-  Ciudad: "",
+  //Ciudad: "",
 
-  // Nombre: "Emilio",
-  // Apellido: "test",
-  // Telefono: "4772740041",
-  // Email: "emiliotest@gmail.com",
+  // Nombre: "Argenis",
+  // Apellido: "Muñoz",
+  // Telefono: "5587418563",
+  // Email: "argenismuga@gmail.com",
+  // Estado: "Puebla",
 
   Nombre: "",
-  Apellido: "",
+  ApellidoPat: "",
   Telefono: "",
   Email: "",
+  ClientesProfsEstado: "",
 
   TipoEntrega: [""],
   Confirmado: [""],
@@ -80,22 +82,25 @@ let MiDetalle = {
 
   Cupon: [""],
 
-  // Titulo: "Aprende a Comer",
-  // Web: "aprendeacomer.org",
+  // ClientesProfsTitulo: "Greekfield jeans",
+  // ClientesProfsWeb: "greekfield.com",
 
-  Titulo: "",
-  Web: "",
+  ClientesProfsTitulo: "",
+  ClientesProfsWeb: "",
 
 
-  Categoria: "",
-  Estado: "",
-  Empleados: "",
+  ClientesProfsCategoria: "",
+  ClientesProfsEmpleados: "",
 
-  Referencia1: "",
-  Referencia2: "",
-  Referencia3: "",
+  ClientesProfsReferencia1: true,
+  ClientesProfsReferencia2: true,
+  ClientesProfsReferencia3: "",
+  // Referencia1: "",
+  // Referencia2: "",
+  // Referencia3: "",
 
-  Descripcion: "  ",
+  ClientesProfsDescripcion: "  ",
+  // ClientesProfsDescripcion: "Hola soy Argenis, me dedico a la fabricación de ropa, tengo en mente una idea de franquicias para ello y también trabajo en conjunto con repostería, específicamente pasteles.",
 
 
 
@@ -353,6 +358,13 @@ let useAcciones = function(StateContext) {
 
     Loader : async function (props) {
 
+
+
+      let useRegistro = await useData.Clientes().getIdFull({Id:3544}) //todo hilar con request
+      console.log(useRegistro)
+      setDetalle(useRegistro)
+
+
       // this.getUser()
       setLoadingDataMain(true)
       setLoadingDataMain(false)
@@ -561,10 +573,10 @@ const Body = props => {
 
           <Helmet>
             <meta charSet="utf-8" />
-            <title>Únete a la Red Empresando</title>
+            <title>Red Empresando</title>
             {/* <link rel="canonical" href="http://mysite.com/example" /> */}
-            <meta property="og:title" content="Únete a la Red Empresando" />
-            <meta property="og:description" content="¿Te gustaría recibir lo mas destacado del mundo emprendedor?" />
+            <meta property="og:title" content="Red Empresando" />
+            <meta property="og:description" content="Registro" />
             <meta property="og:image" content="https://smxblogs.com/empresando/wp-content/empresando/logoemp.png" />
           </Helmet>
 

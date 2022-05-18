@@ -2,7 +2,7 @@ import axios from "axios"
 
 // ------------------------------------------------------------
 
- // let graphqlserver = "https://8t8jt.sse.codesandbox.io/gql"
+  // let graphqlserver = "https://djkx1w.sse.codesandbox.io/gql"
   let graphqlserver = "https://smxai.net/graphqleai2"
 
 
@@ -89,6 +89,65 @@ let usedata = function(StateContextM) {
 
           if (axdataRes) {return axdataRes} else {return 0}
         },
+
+
+        getIdFull: async function(e) {
+         
+          var axdata = await axios({
+            url: graphqlserver,
+            method: "post",
+            data: {
+              query: `
+              query ClientesProfs($Query: ClienteInput) {
+                Clientes {
+                  Consultas {
+                    ClientesProfs(Query: $Query) {
+                      Id
+                      Fecha
+                      Empresa
+                      Nombre
+                      ApellidoPat
+                      Email
+                      Telefono
+                      ClientesProfsCategoria
+                      ClientesProfsEstado
+                      ClientesProfsStatus
+                      ClientesProfsTitulo
+                      ClientesProfsWeb
+                      ClientesProfsEmpleados
+                      ClientesProfsDescripcion
+                      ClientesProfsReferencia1
+                      ClientesProfsReferencia2
+                      ClientesProfsReferencia3
+                      ClientesProfsReferencia4
+                      ClientesProfsReferencia5
+                      
+                    }
+                  }
+                }
+              }
+              
+               `,
+              variables: {
+                Query: {
+                  Id: e.Id,
+                }
+              }
+            }
+          });
+    
+          let axdataRes = axdata.data.data.Clientes.Consultas.ClientesProfs[0];
+
+          if (axdataRes) {return axdataRes} else {return 0}
+        },
+
+
+
+
+
+
+
+
 
 
 
