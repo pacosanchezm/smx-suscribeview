@@ -7,10 +7,23 @@ const rootElement = document.getElementById("root")
 
 
 
+window.attachApp = (usr, page, id, opt, token) => {
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App id={window.id}/>
+    <App id={id}/>
     </React.StrictMode>,
   rootElement
 )
+
+
+
+
+};
+
+
+
+
+
+
