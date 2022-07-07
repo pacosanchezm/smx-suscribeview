@@ -102,7 +102,7 @@ let MiDetalle = {
   ClientesProfsDescripcion: "  ",
   // ClientesProfsDescripcion: "Hola soy Argenis, me dedico a la fabricación de ropa, tengo en mente una idea de franquicias para ello y también trabajo en conjunto con repostería, específicamente pasteles.",
 
-
+  ClientesProfsObv: "",
 
 
 
@@ -139,6 +139,8 @@ const Categorias = [
   { value: "Repostería", label: "Repostería" },
   { value: "Responsabilidad social", label: "Responsabilidad social" },
   { value: "Tecnología y plataformas", label: "Tecnología y plataformas" },
+  { value: "ConsumeLocal", label: "ConsumeLocal" },
+
   { value: "Otros", label: "Otros" },
 ]
 
@@ -358,9 +360,9 @@ let useAcciones = function(StateContext) {
 
     Loader : async function (props) {
 
-      console.log(props)
 
-      let useRegistro = await useData.Clientes().getIdFull({Id:props.id}) //todo hilar con request
+
+      let useRegistro = await useData.Clientes().getIdFull({Id:3544}) //todo hilar con request
       console.log(useRegistro)
       setDetalle(useRegistro)
 
@@ -758,6 +760,7 @@ export default (App = props => {
 
         </div>
       </div>
+
 
 
   );

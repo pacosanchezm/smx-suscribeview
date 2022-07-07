@@ -328,7 +328,7 @@ const ModuloSimple  = () => {
           <Col xs={3}> <Text sx={Estilo.label1} >Empleados</Text> </Col>
           <Col xs={9}> 
             <Dropbox
-              name="Categoria"
+              name="Empleados"
               isSearchable={false}
               styles={DropboxFiltro1}
               value={{value: Detalle.ClientesProfsEmpleados, label: Detalle.ClientesProfsEmpleados}}
@@ -337,6 +337,24 @@ const ModuloSimple  = () => {
             />
           </Col>
         </Row>
+
+
+        <Row style={{marginBottom: "10px"}}>
+          <Col xs={3}> <Text sx={Estilo.label1} >Categoría</Text> </Col>
+          <Col xs={9}> 
+            <Dropbox
+              name="Categoria"
+              isSearchable={false}
+              styles={DropboxFiltro1}
+              value={{value: Detalle.ClientesProfsCategoria, label: Detalle.ClientesProfsCategoria}}
+              options={props.useContext.Categorias[0]}
+              onChange={async e => { setDetalle({ ...Detalle, "ClientesProfsCategoria": e.value }) }} 
+            />
+          </Col>
+        </Row>
+
+
+
 
 
       </Container>
@@ -374,8 +392,95 @@ const ModuloSimple  = () => {
 
       </Container>
 
+      <Box sx={{ height: 13,  }} />
+
+
+
+      <Col xs={9} style={{textAlign: "left"}}>
+        <Text sx={{...Estilo.msecc2, textAlign: "left"}}>{"Observaciones empresando"}</Text> 
+      </Col>
+
+
+
+      <Container fluid 
+        style={{ width: "100%", bg: "white", borderRadius: "10px", borderStyle: "solid", borderWidth:1, borderColor: "#9999", paddingTop: "10px"}}
+      >
+        <Row style={{marginBottom: "10px"}}>
+
+          <Col xs={12}> 
+            <Textarea
+              // sx={Estilo.input1}
+              {...useChangeArray(Detalle, "ClientesProfsObv", setDetalle)}
+              rows={5}
+            />          
+          </Col>
+        </Row>
+
+
+
+        <Row style={{marginBottom: "10px"}}>
+          <Button
+            sx={{width: "100%", bg: "transparent"}}
+            {...useChangeBooleanArray(Detalle, "ClientesProfsDestacado", setDetalle)}
+          >
+            <Row>
+            <Col xs={2} style={{paddingLeft: "50px"}}> <Checkbox checked={Detalle.ClientesProfsDestacado}/> </Col>
+              <Col xs={8} style={{textAlign: "left"}}> <Text sx={Estilo.d2s}>Destacado</Text> </Col>
+            </Row>
+          </Button>
+        </Row>
+
+
+
+
+
+
+
+
+
+
+      </Container>
+
+
 
       <Box sx={{ height: 21,  }} />
+
+
+      <Box css={{ height: 8 }} />
+
+
+      <Container fluid 
+      >
+        <Row style={{marginBottom: "10px"}}>
+        <Col xs={2}/> 
+
+          <Col xs={8}> 
+            <Button sx={{ width: "100%", height: "34px" }}
+              width={1}
+              bg="#B7CE3F"
+              disabled={false}
+              onClick={async () => {
+                setLoadingSecc(true)
+                  await props.useAcciones.InfoAdd()
+                setLoadingSecc(false)
+              }}
+            >
+              <Text sx={Estilo.mbtn1}>
+                Guardar
+                {LoadingSecc ? <Spinner size={17} ml={0} /> : <div/>}
+              </Text>
+
+            </Button>
+          </Col>
+
+        </Row>
+
+      </Container>
+
+      <Box css={{ height: 34 }} />
+
+
+
 
 
 </Container>
